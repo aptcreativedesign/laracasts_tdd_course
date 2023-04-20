@@ -21,7 +21,11 @@ class ProjectsController extends Controller
     public function store()
     {
         // validate request input
-        $attributes = request()->validate(['title' => 'required', 'description' => 'required']);
+        $attributes = request()->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'owner_id' => 'required'
+        ]);
 
         // persist data
         Project::create($attributes);

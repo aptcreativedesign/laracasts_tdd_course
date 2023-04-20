@@ -21,3 +21,13 @@ Route::get('/', function () {
 Route::get('/projects', [ProjectsController::class, 'index']);
 Route::get('/projects/{project}', [ProjectsController::class, 'show']);
 Route::post('/projects', [ProjectsController::class, 'store']);
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

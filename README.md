@@ -8,6 +8,8 @@ This repository contains the code for the Laracasts TDD course. The course is a 
 
 Create Birdboard: a minimal Basecamp-like project management app in Laravel 10.
 
+Uses the Jetstream livewire scaffolding with Tailwind CSS.
+
 
 ## Installation
 Create a new MySQL database and update the `.env` file with the database credentials.
